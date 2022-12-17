@@ -1,19 +1,13 @@
-// __tests__/About.test.js
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import About from '..';
+import React from "react";
+import coverImage from "../../assets/cover/cover-image.jpg";
 
-afterEach(cleanup);
+function About() {
+  return (
+    <section className="my-5">
+      <h1 id="about">Who am I?</h1>
+      <img src={coverImage} className="my-2" style={{ width: "100%" }} alt="cover" />
+    </section>
+  );
+}
 
-describe('About component', () => {
-  it('renders', () => {
-    render(<About />);
-  });
-  
-  it('matches snapshot DOM node structure', () => {
-    const { asFragment } = render(<About />);
-    
-    expect(asFragment()).toMatchSnapshot();
-  });
-})
+export default About;
